@@ -19,4 +19,14 @@ public class FibonacciCalculator {
         }
         return b;
     }
+
+    public static Long calculateRecursivelyNumber(int number) {
+        if (number==0){
+            return 0L;
+        }
+        if (number==1){
+            return 1L;
+        }
+        return calculateRecursivelyNumber(number-2)+calculateRecursivelyNumber(number-1);
+    }
 }

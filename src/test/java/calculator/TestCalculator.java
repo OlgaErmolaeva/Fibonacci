@@ -21,8 +21,22 @@ public class TestCalculator {
 
         //then
         assertEquals(resultList, expectedList);
+    }
 
+    @Test
+    public void TestAnyNumberTill33Recursively(){
 
+        // given
+        Long[] resultList = new Long[34];
+        Long[] expectedList = createExpectedFibonacciList();
+
+        // when
+        for (int i = 0; i <= 33; i++) {
+            resultList[i] = FibonacciCalculator.calculateRecursivelyNumber(i);
+        }
+
+        //then
+        assertEquals(resultList, expectedList);
     }
 
     private Long[] createExpectedFibonacciList() {
@@ -42,6 +56,21 @@ public class TestCalculator {
 
         // then
         softAssert.assertEquals(result49,7778742049L);
+        softAssert.assertEquals(result55,139583862445L);
+    }
+
+    @Test
+    public void TestNumber49and55Recursively() {
+
+        // given
+        SoftAssert softAssert = new SoftAssert();
+
+        // when
+        //long result49 = FibonacciCalculator.calculateRecursivelyNumber(49);
+        long result55 = FibonacciCalculator.calculateRecursivelyNumber(55);
+
+        // then
+        //softAssert.assertEquals(result49,7778742049L);
         softAssert.assertEquals(result55,139583862445L);
     }
 }
